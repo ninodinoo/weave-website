@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weave — Your AI workflow, woven to perfection.</title>
+  <meta name="description" content="Weave is a framework that lives inside your AI coding tool. It learns how you work, understands your project, and builds the perfect workflow — automatically.">
+
+  <!-- OG Meta -->
+  <meta property="og:title" content="Weave — AI Workflow Framework">
+  <meta property="og:description" content="Your AI workflow, woven to perfection. No config files, no templates — just a conversation.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Weave — AI Workflow Framework">
+  <meta name="twitter:description" content="Your AI workflow, woven to perfection.">
+
+  <meta name="theme-color" content="#0a0a0a">
+  <link rel="icon" href="../public/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="styles/reset.css">
+  <link rel="stylesheet" href="styles/terminal.css">
+</head>
+<body>
+
+  <!-- 1. Hero -->
+  <section class="section hero">
+    <pre class="ascii-banner"> ██╗    ██╗███████╗ █████╗ ██╗   ██╗███████╗
+ ██║    ██║██╔════╝██╔══██╗██║   ██║██╔════╝
+ ██║ █╗ ██║█████╗  ███████║██║   ██║█████╗
+ ██║███╗██║██╔══╝  ██╔══██║╚██╗ ██╔╝██╔══╝
+ ╚███╔███╔╝███████╗██║  ██║ ╚████╔╝ ███████╗
+  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝  ╚═══╝  ╚══════╝</pre>
+    <p class="tagline">Your AI workflow, woven to perfection.</p>
+    <div class="install-cmd">
+      <button class="cmd" data-copy="npx weave">
+        <span class="prompt">$</span>
+        <span>npx weave</span>
+        <span class="cursor"></span>
+        <span class="copied-tooltip">copied!</span>
+      </button>
+    </div>
+  </section>
+
+  <div class="scroll-indicator">v scroll v</div>
+
+  <div class="divider">---</div>
+
+  <!-- 2. What is Weave? -->
+  <section class="section what-is fade-in">
+    <p class="section-title">what is weave?</p>
+    <p>Weave is a framework that lives inside your AI coding tool.</p>
+    <p>It learns how you work, understands your project,</p>
+    <p>and builds the perfect workflow — automatically.</p>
+    <p class="quote">No config files to write.</p>
+    <p class="quote">No templates to copy.</p>
+    <p class="quote">Just a conversation.</p>
+  </section>
+
+  <div class="divider">---</div>
+
+  <!-- 3. How it works -->
+  <section class="section how-it-works fade-in">
+    <p class="section-title">how it works</p>
+
+    <div class="step">
+      <p class="step-cmd">weave init</p>
+      <div class="step-output">
+        <p class="check">Detected: Claude Code</p>
+        <p class="check">Files installed</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <p class="step-cmd">/weave:onboarding</p>
+      <div class="step-output">
+        <p class="arrow">Tell me about your project...</p>
+        <p class="arrow">What's your tech stack?</p>
+        <p class="arrow">How do you like to work?</p>
+        <p class="check">Workflow generated</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <p class="step-cmd">just work.</p>
+      <div class="step-output">
+        <p class="check">Agents configured</p>
+        <p class="check">Teams assembled</p>
+        <p class="check">Rules personalized</p>
+        <p class="check">Evolving in background...</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider">---</div>
+
+  <!-- 4. Features -->
+  <section class="section features fade-in">
+    <p class="section-title">features</p>
+
+    <div class="tree-item" onclick="this.classList.toggle('open')">
+      <span class="tree-prefix">├── </span><span class="tree-file">onboarding.md</span><span class="tree-comment"># AI interviews you, builds your workflow</span>
+      <div class="tree-desc">Weave asks you about your project, your stack, and how you like to work. Then it generates a complete workflow tailored to you — agents, rules, and team configs.</div>
+    </div>
+
+    <div class="tree-item" onclick="this.classList.toggle('open')">
+      <span class="tree-prefix">├── </span><span class="tree-file">agent-teams.md</span><span class="tree-comment"># Specialized agents that work together</span>
+      <div class="tree-desc">Groups of agents with specific roles — frontend, backend, testing, docs. They coordinate, review each other's work, and follow your conventions.</div>
+    </div>
+
+    <div class="tree-item" onclick="this.classList.toggle('open')">
+      <span class="tree-prefix">├── </span><span class="tree-file">evolve.md</span><span class="tree-comment"># Your setup improves while you work</span>
+      <div class="tree-desc">Weave watches how you work and quietly refines your workflow. Better prompts, smarter rules, tighter agents — all happening in the background.</div>
+    </div>
+
+    <div class="tree-item" onclick="this.classList.toggle('open')">
+      <span class="tree-prefix">├── </span><span class="tree-file">sync.md</span><span class="tree-comment"># One workflow, every platform</span>
+      <div class="tree-desc">Your workflow works across platforms. Set it up once in Claude Code, use it everywhere — Cursor, Codex, Windsurf. Same rules, same agents.</div>
+    </div>
+
+    <div class="tree-item" onclick="this.classList.toggle('open')">
+      <span class="tree-prefix">└── </span><span class="tree-file">your-rules.md</span><span class="tree-comment"># Everything tailored to YOU</span>
+      <div class="tree-desc">No generic boilerplate. Every rule, every agent instruction is based on your actual project and your actual preferences. It's yours.</div>
+    </div>
+  </section>
+
+  <div class="divider">---</div>
+
+  <!-- 5. Platforms -->
+  <section class="section platforms fade-in">
+    <p class="section-title">supported platforms</p>
+
+    <div class="platform">
+      <span class="platform-name">[Claude Code]</span>
+      <span class="platform-status ready">&#10003; ready</span>
+    </div>
+    <div class="platform">
+      <span class="platform-name">[Cursor]</span>
+      <span class="platform-status soon">&#9633; coming soon</span>
+    </div>
+    <div class="platform">
+      <span class="platform-name">[Codex]</span>
+      <span class="platform-status soon">&#9633; coming soon</span>
+    </div>
+    <div class="platform">
+      <span class="platform-name">[Windsurf]</span>
+      <span class="platform-status soon">&#9633; coming soon</span>
+    </div>
+  </section>
+
+  <div class="divider">---</div>
+
+  <!-- 6. Demo -->
+  <section id="demo" class="section fade-in">
+    <p class="section-title">demo</p>
+    <div class="demo-window">
+      <div class="demo-titlebar">
+        <span class="demo-dot red"></span>
+        <span class="demo-dot yellow"></span>
+        <span class="demo-dot green"></span>
+        <span class="demo-title">weave — onboarding</span>
+      </div>
+      <div class="demo-body" id="demo-terminal"></div>
+    </div>
+  </section>
+
+  <div class="divider">---</div>
+
+  <!-- 7. Get Started -->
+  <section class="section get-started fade-in">
+    <p class="section-title">get started</p>
+    <button class="cmd" data-copy="npx weave">
+      <span class="prompt">$</span>
+      <span>npx weave</span>
+      <span class="cursor"></span>
+      <span class="copied-tooltip">copied!</span>
+    </button>
+    <p style="margin-top: 16px; color: var(--dimmed); font-size: 15px;">Run it, answer a few questions, and your workflow is ready.</p>
+    <p class="comment" style="margin-top: 24px;">or check the source:</p>
+    <a href="https://github.com/nino/weave" class="github-link" target="_blank" rel="noopener">github.com/nino/weave</a>
+  </section>
+
+  <!-- 8. Footer -->
+  <footer class="footer">
+    <div class="divider">---</div>
+    <p style="margin-top: 20px;">built by nino</p>
+    <div class="footer-links">
+      <a href="https://github.com/nino/weave" target="_blank" rel="noopener">github</a>
+      <a href="https://www.npmjs.com/package/weave" target="_blank" rel="noopener">npm</a>
+      <a href="#">license: MIT</a>
+    </div>
+  </footer>
+
+  <script src="scripts/clipboard.js"></script>
+  <script src="scripts/typewriter.js"></script>
+  <script src="scripts/demo.js"></script>
+</body>
+</html>
