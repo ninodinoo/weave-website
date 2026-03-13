@@ -1,0 +1,440 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+
+:root {
+  --bg: #0a0a0a;
+  --text: #e0e0e0;
+  --accent: #4ade80;
+  --dimmed: #555555;
+  --font: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 18px;
+  overflow-x: hidden;
+}
+
+/* --- Layout --- */
+
+.section {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 100px 48px;
+}
+
+.divider {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-top: 1px solid #1a1a1a;
+  height: 0;
+  overflow: hidden;
+  color: transparent;
+  user-select: none;
+}
+
+/* --- Fade-in animation --- */
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Cursor blink --- */
+
+.cursor {
+  display: inline-block;
+  width: 0.6em;
+  height: 1.1em;
+  background: var(--accent);
+  vertical-align: text-bottom;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* --- Hero --- */
+
+.hero {
+  padding-top: 140px;
+  padding-bottom: 120px;
+  text-align: center;
+}
+
+.hero .ascii-banner {
+  font-size: clamp(8px, 2.8vw, 18px);
+  line-height: 1.3;
+  color: var(--accent);
+  white-space: pre;
+  display: inline-block;
+  text-align: left;
+  text-shadow: 0 0 20px rgba(74, 222, 128, 0.3), 0 0 40px rgba(74, 222, 128, 0.1);
+}
+
+.hero .tagline {
+  margin-top: 32px;
+  font-size: 20px;
+  color: var(--dimmed);
+}
+
+.hero .install-cmd {
+  margin-top: 40px;
+  display: inline-block;
+}
+
+/* --- Command blocks (copyable) --- */
+
+.cmd {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #141414;
+  border: 1px solid #222;
+  border-radius: 6px;
+  padding: 14px 28px;
+  font-family: var(--font);
+  font-size: 18px;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+  position: relative;
+}
+
+.cmd:hover {
+  border-color: var(--accent);
+  background: #1a1a1a;
+}
+
+.cmd .prompt {
+  color: var(--accent);
+  user-select: none;
+}
+
+.cmd .copied-tooltip {
+  position: absolute;
+  top: -38px;
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: var(--accent);
+  color: var(--bg);
+  font-size: 13px;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 4px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.cmd .copied-tooltip.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* --- Comment style --- */
+
+.comment {
+  color: var(--dimmed);
+}
+
+.comment::before {
+  content: '# ';
+  color: var(--dimmed);
+}
+
+/* --- Section: What is Weave --- */
+
+.what-is p {
+  margin-bottom: 8px;
+}
+
+.what-is .quote {
+  color: var(--accent);
+  margin-top: 16px;
+}
+
+.what-is .quote::before {
+  content: '> ';
+  color: var(--dimmed);
+}
+
+/* --- Section: How it works --- */
+
+.how-it-works .step {
+  margin-bottom: 40px;
+}
+
+.how-it-works .step-cmd {
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+
+.how-it-works .step-cmd::before {
+  content: '$ ';
+}
+
+.how-it-works .step-output {
+  padding-left: 20px;
+}
+
+.how-it-works .check::before {
+  content: '\2713  ';
+  color: var(--accent);
+}
+
+.how-it-works .arrow::before {
+  content: '> ';
+  color: var(--dimmed);
+}
+
+/* --- Section: Features (file tree) --- */
+
+.features .tree-item {
+  padding: 12px 8px;
+  cursor: pointer;
+  user-select: none;
+  border-bottom: 1px solid #1a1a1a;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.features .tree-item:hover {
+  background: #141414;
+}
+
+.features .tree-item:last-child {
+  border-bottom: none;
+}
+
+.features .tree-prefix {
+  color: var(--dimmed);
+  user-select: none;
+}
+
+.features .tree-file {
+  color: var(--accent);
+}
+
+.features .tree-comment {
+  color: var(--dimmed);
+  margin-left: 8px;
+}
+
+.features .tree-desc {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  padding-left: 28px;
+  color: var(--dimmed);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.features .tree-item.open .tree-desc {
+  max-height: 120px;
+  padding-top: 8px;
+  padding-bottom: 4px;
+}
+
+/* --- Section: Platforms --- */
+
+.platforms .platform {
+  padding: 6px 0;
+  display: flex;
+  gap: 12px;
+}
+
+.platforms .platform-name {
+  min-width: 140px;
+}
+
+.platforms .platform-status.ready {
+  color: var(--accent);
+}
+
+.platforms .platform-status.soon {
+  color: var(--dimmed);
+}
+
+/* --- Section: Demo --- */
+
+.demo-window {
+  background: #141414;
+  border: 1px solid #222;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.demo-titlebar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: #1a1a1a;
+  border-bottom: 1px solid #222;
+}
+
+.demo-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.demo-dot.red { background: #ff5f57; }
+.demo-dot.yellow { background: #febc2e; }
+.demo-dot.green { background: #28c840; }
+
+.demo-title {
+  margin-left: 8px;
+  font-size: 14px;
+  color: var(--dimmed);
+}
+
+.demo-body {
+  padding: 28px;
+  min-height: 340px;
+  font-size: 16px;
+  line-height: 1.8;
+  white-space: pre-wrap;
+}
+
+.demo-body .demo-prompt {
+  color: var(--accent);
+}
+
+.demo-body .demo-input {
+  color: var(--text);
+}
+
+.demo-body .demo-output {
+  color: var(--dimmed);
+}
+
+.demo-body .demo-check {
+  color: var(--accent);
+}
+
+/* --- Section: Get Started --- */
+
+.get-started {
+  text-align: center;
+}
+
+.get-started .comment {
+  margin-top: 20px;
+}
+
+.get-started .github-link {
+  display: inline-block;
+  margin-top: 24px;
+  color: var(--accent);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.get-started .github-link:hover {
+  border-bottom-color: var(--accent);
+}
+
+/* --- Footer --- */
+
+.footer {
+  text-align: center;
+  padding: 60px 48px;
+  color: var(--dimmed);
+  font-size: 15px;
+}
+
+.footer a {
+  color: var(--dimmed);
+  transition: color 0.2s;
+}
+
+.footer a:hover {
+  color: var(--accent);
+}
+
+.footer .footer-links {
+  margin-top: 8px;
+}
+
+.footer .footer-links a + a::before {
+  content: ' \00B7 ';
+  color: var(--dimmed);
+}
+
+/* --- Section titles --- */
+
+.section-title {
+  color: var(--dimmed);
+  margin-bottom: 32px;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.section-title::before {
+  content: '# ';
+}
+
+/* --- Scroll indicator --- */
+
+.scroll-indicator {
+  text-align: center;
+  padding-bottom: 20px;
+  animation: scrollBounce 2s ease-in-out infinite;
+  color: var(--dimmed);
+  font-size: 14px;
+  user-select: none;
+}
+
+@keyframes scrollBounce {
+  0%, 100% { transform: translateY(0); opacity: 0.4; }
+  50% { transform: translateY(8px); opacity: 0.8; }
+}
+
+/* --- Responsive --- */
+
+@media (max-width: 600px) {
+  .section {
+    padding: 48px 16px;
+  }
+
+  .hero {
+    padding-top: 64px;
+  }
+
+  .hero .ascii-banner {
+    font-size: clamp(5px, 4vw, 10px);
+  }
+
+  .cmd {
+    font-size: 13px;
+    padding: 10px 14px;
+  }
+
+  .demo-body {
+    font-size: 12px;
+    padding: 14px;
+    min-height: 220px;
+  }
+
+  .platforms .platform {
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .platforms .platform-name {
+    min-width: unset;
+  }
+}
