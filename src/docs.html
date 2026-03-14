@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Docs — Weave</title>
+  <meta name="description" content="Weave documentation — installation, onboarding, agents, teams, skills, multi-platform sync, and more.">
+  <meta name="theme-color" content="#0a0a0a">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="styles/reset.css">
+  <link rel="stylesheet" href="styles/terminal.css">
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav class="nav">
+    <a href="/" class="nav-logo">🧶 <span>weave</span></a>
+    <div class="nav-links">
+      <a href="/">home</a>
+      <a href="#" class="nav-active">docs</a>
+      <a href="https://github.com/ninodinoo/weave" target="_blank" rel="noopener">github ↗</a>
+    </div>
+  </nav>
+
+  <div class="docs-layout">
+    <!-- Sidebar -->
+    <aside class="docs-sidebar">
+      <div class="docs-sidebar-inner">
+        <p class="docs-sidebar-title">Documentation</p>
+        <nav class="docs-toc">
+          <a href="#why" class="docs-toc-link active">Why Weave?</a>
+          <a href="#install" class="docs-toc-link">Installation</a>
+          <a href="#onboarding" class="docs-toc-link">Onboarding</a>
+          <a href="#agents" class="docs-toc-link">Agents</a>
+          <a href="#teams" class="docs-toc-link">Teams</a>
+          <a href="#skills" class="docs-toc-link">Skills</a>
+          <a href="#evolve" class="docs-toc-link">Evolve</a>
+          <a href="#sync" class="docs-toc-link">Multi-Platform</a>
+          <a href="#structure" class="docs-toc-link">File Structure</a>
+          <a href="#uninstall" class="docs-toc-link">Uninstall</a>
+        </nav>
+      </div>
+    </aside>
+
+    <!-- Content -->
+    <main class="docs-content">
+
+      <!-- Why Weave? -->
+      <section id="why" class="docs-section">
+        <h2>Why Weave?</h2>
+        <p>AI coding tools are powerful, but they don't know <em>you</em>. They don't know your project's architecture, your coding conventions, or how you like to break down tasks. So you end up repeating yourself — explaining context, correcting habits, re-establishing rules every session.</p>
+        <p>Weave fixes this. It's a framework that lives inside your AI tool and gives it persistent, personalized knowledge about:</p>
+        <ul>
+          <li><strong>Who you are</strong> — your role, experience, and how you like to work</li>
+          <li><strong>What you're building</strong> — your tech stack, architecture, and project goals</li>
+          <li><strong>How you want AI to behave</strong> — your rules, conventions, and preferences</li>
+        </ul>
+        <p>Instead of configuring this manually, Weave generates everything through a conversation. And it keeps improving as your project evolves.</p>
+
+        <h3>What makes Weave different</h3>
+        <ul>
+          <li><strong>No templates</strong> — Everything is generated specifically for you and your project</li>
+          <li><strong>Lives inside your tool</strong> — Not a separate CLI or service. It runs as native skills/commands within your AI editor</li>
+          <li><strong>Conversation-based</strong> — The onboarding is a natural dialog, not a form</li>
+          <li><strong>Auto-evolving</strong> — Hooks track your patterns and suggest improvements</li>
+          <li><strong>Multi-platform</strong> — One source of truth, synced to all your AI tools natively</li>
+          <li><strong>Zero lock-in</strong> — Uninstall removes everything cleanly</li>
+        </ul>
+      </section>
+
+      <!-- Installation -->
+      <section id="install" class="docs-section">
+        <h2>Installation</h2>
+        <p>Weave installs via npx — no global packages needed:</p>
+        <pre><code>$ npx weave-ai</code></pre>
+        <p>The installer will:</p>
+        <ol>
+          <li>Show the Weave banner</li>
+          <li>Auto-detect which AI tools are present in your project</li>
+          <li>Let you choose which platforms to install for</li>
+          <li>Install platform-native files for each selected platform</li>
+          <li>Create the <code>.weave/</code> state directory</li>
+        </ol>
+
+        <h3>What gets installed</h3>
+        <table class="docs-table">
+          <thead>
+            <tr>
+              <th>Platform</th>
+              <th>Skills</th>
+              <th>Agents</th>
+              <th>Hooks</th>
+              <th>Config</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Claude Code</td>
+              <td>7 skills</td>
+              <td>4 subagents</td>
+              <td>2 hooks</td>
+              <td>CLAUDE.md</td>
+            </tr>
+            <tr>
+              <td>OpenClaw</td>
+              <td>7 sub-skills</td>
+              <td>SKILL.md + SOUL.md + STYLE.md</td>
+              <td>2 hooks</td>
+              <td>AGENTS.md</td>
+            </tr>
+            <tr>
+              <td>Cursor</td>
+              <td>7 commands</td>
+              <td>weave.mdc</td>
+              <td>hooks.json + 2</td>
+              <td>.cursor/ files</td>
+            </tr>
+            <tr>
+              <td>Codex</td>
+              <td>7 skills</td>
+              <td>AGENTS.md</td>
+              <td>hooks.json + 2</td>
+              <td>.codex/ files</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Requirements</h3>
+        <ul>
+          <li>Node.js 18+</li>
+          <li>A project directory (Weave installs into the current directory)</li>
+          <li>At least one supported AI tool set up in the project</li>
+        </ul>
+      </section>
+
+      <!-- Onboarding -->
+      <section id="onboarding" class="docs-section">
+        <h2>Onboarding</h2>
+        <p>After installation, open your AI tool in the project and run:</p>
+        <pre><code>/weave:onboarding</code></pre>
+        <p>This starts a natural conversation (~10 exchanges) in three phases:</p>
+
+        <h3>Phase 1 — The Person</h3>
+        <p>Weave learns about you:</p>
+        <ul>
+          <li>Your role and experience level</li>
+          <li>Your primary tech stack</li>
+          <li>How you prefer to work with AI (plan first vs. dive in, terse vs. detailed)</li>
+          <li>What frustrates you about your current workflow</li>
+        </ul>
+
+        <h3>Phase 2 — The Project</h3>
+        <p>Weave analyzes your codebase (<code>package.json</code>, directory structure, frameworks) and asks about:</p>
+        <ul>
+          <li>Your vision and goals for the project</li>
+          <li>The architecture and key decisions</li>
+          <li>Your team structure and collaboration style</li>
+          <li>Current pain points and priorities</li>
+        </ul>
+
+        <h3>Phase 3 — Workflow Proposal</h3>
+        <p>Based on everything learned, Weave proposes a complete workflow:</p>
+        <ul>
+          <li>Which agents to create and why</li>
+          <li>Which teams to assemble with what workflow</li>
+          <li>Which rules to enforce</li>
+          <li>Which custom skills to add</li>
+        </ul>
+        <p>You review, adjust, and approve. Then Weave generates all the files.</p>
+
+        <h3>Generated output</h3>
+        <pre><code>.weave/
+├── config.json        # Your profile and project context
+├── agents/*.md        # Agent definitions
+├── teams/*.json       # Team configurations
+├── rules/*.md         # Project rules
+└── skills/*.md        # Custom skills</code></pre>
+      </section>
+
+      <!-- Agents -->
+      <section id="agents" class="docs-section">
+        <h2>Agents</h2>
+        <p>Agents are specialized AI personas with a single clear job. Each agent has:</p>
+        <ul>
+          <li><strong>Role</strong> — One sentence describing what it is</li>
+          <li><strong>Responsibility</strong> — Exactly what it does (specific, not vague)</li>
+          <li><strong>Instructions</strong> — Step-by-step approach</li>
+          <li><strong>Tools</strong> — Which tools it's allowed to use</li>
+          <li><strong>Output</strong> — What it produces when done</li>
+        </ul>
+
+        <h3>Example agents</h3>
+        <table class="docs-table">
+          <thead>
+            <tr><th>Agent</th><th>Job</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>planner</td><td>Breaks down tasks into implementation steps</td></tr>
+            <tr><td>executor</td><td>Implements code following plans</td></tr>
+            <tr><td>reviewer</td><td>Reviews for quality, bugs, and conventions</td></tr>
+            <tr><td>tester</td><td>Writes and runs tests</td></tr>
+            <tr><td>security</td><td>Checks for vulnerabilities</td></tr>
+          </tbody>
+        </table>
+        <p>Every agent is customized to your stack. Your reviewer knows your ORM patterns. Your tester matches your testing framework. Nothing is generic.</p>
+
+        <h3>Creating agents</h3>
+        <pre><code>/weave:add-agent</code></pre>
+        <p>Starts a short conversation about what the agent should do, generates it, and offers to add it to an existing team.</p>
+      </section>
+
+      <!-- Teams -->
+      <section id="teams" class="docs-section">
+        <h2>Teams</h2>
+        <p>Teams are groups of agents that work together on complex tasks. Each team defines:</p>
+        <ul>
+          <li><strong>Purpose</strong> — What workflow this team handles</li>
+          <li><strong>Members</strong> — Which agents participate</li>
+          <li><strong>Workflow order</strong> — Who does what first, who hands off to whom</li>
+          <li><strong>Rejection handling</strong> — What happens when the reviewer says no</li>
+          <li><strong>Trigger</strong> — A skill that activates the team</li>
+        </ul>
+
+        <h3>Example: Feature Development Team</h3>
+        <pre><code>Trigger: /weave:build-feature
+
+  1. Planner    → breaks the feature into steps
+  2. Researcher → analyzes relevant codebase areas
+  3. Executor   → implements the code
+  4. Reviewer   → checks quality + conventions
+     ↳ reject? → back to Executor with feedback
+  5. Tester     → writes and runs tests</code></pre>
+
+        <h3>Creating teams</h3>
+        <pre><code>/weave:add-team</code></pre>
+        <p>Define purpose, pick agents, set workflow order, and Weave generates the team config plus a trigger skill.</p>
+      </section>
+
+      <!-- Skills -->
+      <section id="skills" class="docs-section">
+        <h2>Skills</h2>
+        <p>Skills are custom slash commands that automate specific tasks. They're markdown files with instructions for the AI.</p>
+
+        <h3>Built-in skills</h3>
+        <table class="docs-table">
+          <thead>
+            <tr><th>Skill</th><th>What it does</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>/weave:onboarding</code></td><td>Start the onboarding conversation</td></tr>
+            <tr><td><code>/weave:evolve</code></td><td>Optimize workflow based on project changes</td></tr>
+            <tr><td><code>/weave:status</code></td><td>Show current workflow setup</td></tr>
+            <tr><td><code>/weave:sync</code></td><td>Sync workflow across platforms</td></tr>
+            <tr><td><code>/weave:add-agent</code></td><td>Create a new agent</td></tr>
+            <tr><td><code>/weave:add-skill</code></td><td>Create a new custom skill</td></tr>
+            <tr><td><code>/weave:add-team</code></td><td>Define a new agent team</td></tr>
+          </tbody>
+        </table>
+
+        <p>During onboarding, Weave also creates project-specific skills based on your needs — e.g. <code>/weave:deploy</code>, <code>/weave:review</code>, <code>/weave:refactor</code>.</p>
+
+        <h3>Creating skills</h3>
+        <pre><code>/weave:add-skill</code></pre>
+        <p>Describe what the skill should do and Weave generates it.</p>
+      </section>
+
+      <!-- Evolve -->
+      <section id="evolve" class="docs-section">
+        <h2>Evolve</h2>
+        <p>Your project changes. Your workflow should too.</p>
+
+        <h3>Background hooks</h3>
+        <p>Two hooks run automatically in the background:</p>
+        <ul>
+          <li><strong>evolve-hook</strong> — Tracks file edit patterns. When it detects significant changes (new frameworks, repeated tasks), it suggests running <code>/weave:evolve</code></li>
+          <li><strong>context-guard</strong> — Monitors context window usage and warns before it overflows</li>
+        </ul>
+
+        <h3>Manual evolution</h3>
+        <pre><code>/weave:evolve</code></pre>
+        <p>The optimizer agent reads your git history, current codebase, and existing setup. It looks for:</p>
+        <ul>
+          <li>New technologies that need specific rules</li>
+          <li>Stale agents that don't match the project anymore</li>
+          <li>Repeated patterns that could become a skill</li>
+          <li>Missing coverage (tests, CI, docs)</li>
+        </ul>
+        <p>Every change is proposed and explained before being applied. Nothing happens silently.</p>
+      </section>
+
+      <!-- Multi-Platform -->
+      <section id="sync" class="docs-section">
+        <h2>Multi-Platform Sync</h2>
+        <p>Weave uses a single source of truth (<code>.weave/</code>) and translates it into each platform's native format.</p>
+
+        <h3>How it works</h3>
+        <ol>
+          <li>All definitions live in <code>.weave/</code> (agents, skills, teams, rules)</li>
+          <li>The sync agent reads <code>.weave/platforms.json</code> to know which platforms are active</li>
+          <li>For each platform, it writes files in the correct native format</li>
+          <li>Each platform gets the maximum features it supports</li>
+        </ol>
+
+        <h3>Platform-native formats</h3>
+        <table class="docs-table">
+          <thead>
+            <tr><th>Concept</th><th>Claude Code</th><th>OpenClaw</th><th>Cursor</th><th>Codex</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Skills</td>
+              <td><code>.claude/commands/</code></td>
+              <td><code>skills/sub-skills/</code></td>
+              <td><code>.cursor/commands/</code></td>
+              <td><code>.agents/skills/</code></td>
+            </tr>
+            <tr>
+              <td>Agents</td>
+              <td><code>.claude/agents/</code></td>
+              <td><code>SKILL.md</code></td>
+              <td><code>weave.mdc</code></td>
+              <td><code>AGENTS.md</code></td>
+            </tr>
+            <tr>
+              <td>Rules</td>
+              <td><code>CLAUDE.md</code></td>
+              <td><code>SOUL.md</code></td>
+              <td><code>weave.mdc</code></td>
+              <td><code>AGENTS.md</code></td>
+            </tr>
+            <tr>
+              <td>Hooks</td>
+              <td><code>.claude/hooks/</code></td>
+              <td><code>hooks/</code></td>
+              <td><code>.cursor/hooks/</code></td>
+              <td><code>.codex/hooks/</code></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <pre><code>/weave:sync</code></pre>
+        <p>Run this after making changes to propagate everything across platforms.</p>
+      </section>
+
+      <!-- File Structure -->
+      <section id="structure" class="docs-section">
+        <h2>File Structure</h2>
+        <p>After onboarding, your project looks like this:</p>
+        <pre><code>project/
+├── .weave/                    # Source of truth
+│   ├── config.json            # User + project context
+│   ├── platforms.json         # Active platforms
+│   ├── agents/*.md            # Universal agent definitions
+│   ├── skills/*.md            # Universal skills
+│   ├── teams/*.json           # Team definitions
+│   ├── rules/*.md             # Universal rules
+│   └── history/               # Change log
+│
+├── .claude/                   # Claude Code (native)
+│   ├── commands/weave:*.md    # Skills as slash commands
+│   ├── agents/weave-*.md      # Subagents
+│   └── hooks/                 # Lifecycle hooks
+│
+├── .cursor/                   # Cursor (native)
+│   ├── commands/weave-*.md    # Commands
+│   ├── rules/weave.mdc        # Rules
+│   └── hooks.json + hooks/    # Lifecycle hooks
+│
+├── .agents/skills/            # Codex (native)
+├── .codex/hooks.json          # Codex hooks
+│
+├── skills/weave/              # OpenClaw (native)
+├── SOUL.md / STYLE.md         # OpenClaw identity
+├── AGENTS.md                  # Codex/OpenClaw agents
+└── CLAUDE.md                  # Claude Code rules</code></pre>
+        <p>The <code>.weave/</code> directory is the canonical source. Platform directories contain generated files that are kept in sync.</p>
+      </section>
+
+      <!-- Uninstall -->
+      <section id="uninstall" class="docs-section">
+        <h2>Uninstall &amp; Purge</h2>
+
+        <h3>Remove from project</h3>
+        <pre><code>$ npx weave-ai uninstall</code></pre>
+        <p>Requires two confirmations:</p>
+        <ol>
+          <li>Type <code>yes</code> to confirm</li>
+          <li>Type <code>UNWEAVE</code> to finalize</li>
+        </ol>
+        <p>This removes every Weave file from the current project — skills, agents, hooks, rules, and the entire <code>.weave/</code> directory. If <code>CLAUDE.md</code> or <code>AGENTS.md</code> has non-Weave content, only the Weave section is removed.</p>
+
+        <h3>Remove from system</h3>
+        <pre><code>$ npx weave-ai purge</code></pre>
+        <p>Requires three confirmations. Does everything uninstall does, plus:</p>
+        <ul>
+          <li>Removes the global npm package</li>
+          <li>Clears the npx cache for weave-ai</li>
+        </ul>
+        <p>After purge, it's as if Weave was never installed.</p>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>built by <a href="https://github.com/ninodinoo" target="_blank" rel="noopener">nino</a></p>
+    <div class="footer-links">
+      <a href="https://github.com/ninodinoo/weave" target="_blank" rel="noopener">github</a>
+      <a href="https://www.npmjs.com/package/weave-ai" target="_blank" rel="noopener">npm</a>
+      <a href="/">home</a>
+      <a href="#">MIT license</a>
+    </div>
+  </footer>
+
+  <script>
+    // Highlight active TOC link on scroll
+    const tocLinks = document.querySelectorAll('.docs-toc-link');
+    const sections = document.querySelectorAll('.docs-section');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          tocLinks.forEach(l => l.classList.remove('active'));
+          const link = document.querySelector(`.docs-toc-link[href="#${entry.target.id}"]`);
+          if (link) link.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-80px 0px -60% 0px', threshold: 0 });
+
+    sections.forEach(s => observer.observe(s));
+  </script>
+</body>
+</html>
