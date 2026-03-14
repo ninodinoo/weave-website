@@ -3,7 +3,7 @@
 :root {
   --bg: #0a0a0a;
   --text: #e0e0e0;
-  --accent: #4ade80;
+  --accent: #f472b6;
   --dimmed: #555555;
   --font: 'JetBrains Mono', 'Fira Code', monospace;
 }
@@ -80,7 +80,7 @@ body {
   white-space: pre;
   display: inline-block;
   text-align: left;
-  text-shadow: 0 0 20px rgba(74, 222, 128, 0.3), 0 0 40px rgba(74, 222, 128, 0.1);
+  text-shadow: 0 0 20px rgba(244, 114, 182, 0.3), 0 0 40px rgba(244, 114, 182, 0.1);
 }
 
 .hero .tagline {
@@ -403,6 +403,190 @@ body {
   50% { transform: translateY(8px); opacity: 0.8; }
 }
 
+/* --- Navigation --- */
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(10, 10, 10, 0.9);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #1a1a1a;
+  padding: 12px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+  font-size: 14px;
+}
+
+.nav-links a {
+  color: var(--dimmed);
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+/* --- Docs Section --- */
+
+.docs {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 60px 48px 100px;
+}
+
+.docs-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 48px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #1a1a1a;
+}
+
+.docs-nav a {
+  color: var(--dimmed);
+  font-size: 14px;
+  padding: 6px 14px;
+  border: 1px solid #222;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.docs-nav a:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.docs-section {
+  margin-bottom: 64px;
+}
+
+.docs-section h2 {
+  color: var(--accent);
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #1a1a1a;
+}
+
+.docs-section h2::before {
+  content: '## ';
+  color: var(--dimmed);
+}
+
+.docs-section h3 {
+  color: var(--text);
+  font-size: 17px;
+  font-weight: 700;
+  margin-top: 32px;
+  margin-bottom: 12px;
+}
+
+.docs-section h3::before {
+  content: '### ';
+  color: var(--dimmed);
+}
+
+.docs-section p {
+  color: var(--text);
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+
+.docs-section ul {
+  list-style: none;
+  margin-bottom: 16px;
+}
+
+.docs-section ul li {
+  padding: 4px 0;
+  padding-left: 20px;
+  position: relative;
+  line-height: 1.7;
+}
+
+.docs-section ul li::before {
+  content: '- ';
+  color: var(--dimmed);
+  position: absolute;
+  left: 0;
+}
+
+.docs-section code {
+  background: #141414;
+  border: 1px solid #222;
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-size: 0.9em;
+  color: var(--accent);
+}
+
+.docs-section pre {
+  background: #141414;
+  border: 1px solid #222;
+  border-radius: 6px;
+  padding: 20px 24px;
+  margin: 16px 0;
+  overflow-x: auto;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.docs-section pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--text);
+}
+
+.docs-section .file-tree {
+  color: var(--dimmed);
+  font-size: 14px;
+}
+
+.docs-section .file-tree .highlight {
+  color: var(--accent);
+}
+
+.docs-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-size: 15px;
+}
+
+.docs-table th {
+  text-align: left;
+  color: var(--accent);
+  padding: 8px 16px;
+  border-bottom: 1px solid #333;
+}
+
+.docs-table td {
+  padding: 8px 16px;
+  border-bottom: 1px solid #1a1a1a;
+  color: var(--text);
+}
+
+.docs-table .yes { color: var(--accent); }
+.docs-table .no { color: var(--dimmed); }
+
 /* --- Responsive --- */
 
 @media (max-width: 600px) {
@@ -436,5 +620,35 @@ body {
 
   .platforms .platform-name {
     min-width: unset;
+  }
+
+  .nav {
+    padding: 10px 16px;
+  }
+
+  .nav-links {
+    gap: 12px;
+    font-size: 12px;
+  }
+
+  .docs {
+    padding: 40px 16px 60px;
+  }
+
+  .docs-nav {
+    gap: 4px;
+  }
+
+  .docs-nav a {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+
+  .docs-table {
+    font-size: 12px;
+  }
+
+  .docs-table th, .docs-table td {
+    padding: 6px 8px;
   }
 }
