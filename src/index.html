@@ -10,8 +10,6 @@
   <meta property="og:description" content="Your AI workflow, woven to perfection. No config files, no templates — just a conversation.">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Weave — AI Workflow Framework">
-  <meta name="twitter:description" content="Your AI workflow, woven to perfection.">
 
   <meta name="theme-color" content="#0a0a0a">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,23 +21,27 @@
 
   <!-- Nav -->
   <nav class="nav">
-    <a href="/" class="nav-logo">🧶 <span>weave</span></a>
+    <a href="/" class="nav-logo">🧶 weave</a>
     <div class="nav-links">
-      <a href="#how-it-works">how it works</a>
       <a href="#features">features</a>
       <a href="#platforms">platforms</a>
+      <a href="#demo">demo</a>
       <a href="docs.html">docs</a>
-      <a href="https://github.com/ninodinoo/weave" target="_blank" rel="noopener">github ↗</a>
+      <a href="https://github.com/ninodinoo/weave" target="_blank" rel="noopener">github</a>
     </div>
   </nav>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="hero-yarn">🧶</div>
-    <h1 class="hero-title">weave</h1>
-    <p class="hero-tagline">Your AI workflow, woven to perfection.</p>
-    <p class="hero-sub">A framework that lives inside your AI coding tool.<br>It learns how you work and builds the perfect workflow — automatically.</p>
-    <div class="hero-install">
+  <!-- 1. Hero -->
+  <section class="section hero">
+    <pre class="ascii-banner"><span class="yarn-emoji">🧶</span>
+ ██╗    ██╗███████╗ █████╗ ██╗   ██╗███████╗
+ ██║    ██║██╔════╝██╔══██╗██║   ██║██╔════╝
+ ██║ █╗ ██║█████╗  ███████║██║   ██║█████╗
+ ██║███╗██║██╔══╝  ██╔══██║╚██╗ ██╔╝██╔══╝
+ ╚███╔███╔╝███████╗██║  ██║ ╚████╔╝ ███████╗
+  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝  ╚═══╝  ╚══════╝</pre>
+    <p class="tagline">Your AI workflow, woven to perfection.</p>
+    <div class="install-cmd">
       <button class="cmd" data-copy="npx weave-ai">
         <span class="prompt">$</span>
         <span>npx weave-ai</span>
@@ -47,80 +49,130 @@
         <span class="copied-tooltip">copied!</span>
       </button>
     </div>
-    <div class="hero-scroll">↓</div>
   </section>
 
-  <!-- How it works -->
-  <section id="how-it-works" class="section fade-in">
-    <h2 class="section-heading">How it works</h2>
-    <div class="steps">
-      <div class="step-card">
-        <div class="step-number">01</div>
-        <div class="step-content">
-          <h3>Install</h3>
-          <div class="step-cmd">$ npx weave-ai</div>
-          <p>One command. Weave detects your AI tools, installs native skills, agents, and hooks for each platform.</p>
-        </div>
+  <div class="scroll-indicator">v scroll v</div>
+
+  <div class="divider">---</div>
+
+  <!-- 2. What is Weave? -->
+  <section class="section what-is fade-in">
+    <p class="section-title">what is weave?</p>
+    <p>Weave is a framework that lives <em>inside</em> your AI coding tool.</p>
+    <p>It doesn't replace your tools — it makes them smarter.</p>
+    <p>Through a natural conversation, Weave learns who you are,</p>
+    <p>what you're building, and how you like to work.</p>
+    <p>Then it generates a fully personalized workflow — agents, teams, rules, and skills —</p>
+    <p>tailored specifically to you and your project.</p>
+    <p class="quote">No config files to write.</p>
+    <p class="quote">No templates to copy.</p>
+    <p class="quote">Just a conversation.</p>
+  </section>
+
+  <div class="divider">---</div>
+
+  <!-- 3. How it works -->
+  <section class="section how-it-works fade-in">
+    <p class="section-title">how it works</p>
+
+    <div class="step">
+      <p class="step-cmd">npx weave-ai</p>
+      <div class="step-output">
+        <p class="check">Platform detected: Claude Code</p>
+        <p class="check">7 skills installed</p>
+        <p class="check">4 subagents installed</p>
+        <p class="check">2 hooks installed</p>
+        <p class="check">CLAUDE.md created</p>
       </div>
-      <div class="step-card">
-        <div class="step-number">02</div>
-        <div class="step-content">
-          <h3>Onboard</h3>
-          <div class="step-cmd">$ /weave:onboarding</div>
-          <p>A short conversation. Weave learns who you are, what you're building, and how you like to work. Then it generates a personalized workflow.</p>
-        </div>
+    </div>
+
+    <div class="step">
+      <p class="step-cmd">/weave:onboarding</p>
+      <div class="step-output">
+        <p class="arrow">Tell me about yourself...</p>
+        <p class="arrow">What are you building here?</p>
+        <p class="arrow">How do you like to work with AI?</p>
+        <p class="check">Workflow generated — 5 agents, 2 teams, 12 rules</p>
       </div>
-      <div class="step-card">
-        <div class="step-number">03</div>
-        <div class="step-content">
-          <h3>Work</h3>
-          <div class="step-cmd">$ just work.</div>
-          <p>Agents handle the heavy lifting. Teams coordinate complex tasks. Your workflow evolves in the background as your project grows.</p>
-        </div>
+    </div>
+
+    <div class="step">
+      <p class="step-cmd">just work.</p>
+      <div class="step-output">
+        <p class="check">Agents handle the heavy lifting</p>
+        <p class="check">Teams coordinate complex tasks</p>
+        <p class="check">Rules keep everything consistent</p>
+        <p class="check">Workflow evolves in the background...</p>
       </div>
     </div>
   </section>
 
-  <!-- Features -->
-  <section id="features" class="section fade-in">
-    <h2 class="section-heading">Features</h2>
-    <div class="feature-grid">
-      <div class="feature-card">
-        <div class="feature-icon">💬</div>
-        <h3>Conversation-based onboarding</h3>
-        <p>No forms, no config files. Weave interviews you and analyzes your codebase to build a workflow that actually fits.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">🤖</div>
-        <h3>Custom agents</h3>
-        <p>Specialized AI personas tailored to your stack. A reviewer that knows your ORM, a tester that matches your framework.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">👥</div>
-        <h3>Agent teams</h3>
-        <p>Groups of agents with defined workflows. Planner → Coder → Reviewer → Tester — with handoffs and rejection handling.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">🔄</div>
-        <h3>Auto-evolution</h3>
-        <p>Hooks track how you work. When patterns change, Weave proposes targeted improvements. Nothing changes without approval.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">🔗</div>
-        <h3>Multi-platform sync</h3>
-        <p>One workflow, every AI tool. Set it up once, sync to Claude Code, OpenClaw, Cursor, and Codex in native format.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">🚪</div>
-        <h3>Zero lock-in</h3>
-        <p>Don't like it? <code>npx weave-ai uninstall</code> removes everything. Your project stays exactly as it was.</p>
-      </div>
+  <div class="divider">---</div>
+
+  <!-- 4. Features -->
+  <section id="features" class="section features fade-in">
+    <p class="section-title">features</p>
+
+    <div class="tree-item" onclick="this.classList.toggle('open')">
+      <span class="tree-prefix">├── </span><span class="tree-file">onboarding.md</span><span class="tree-comment"># AI interviews you, builds your workflow</span>
+      <div class="tree-desc">A natural conversation that understands your role, your project, and your preferences. No forms, no config — just talk. Weave analyzes your codebase too, so it knows what you're working with.</div>
+    </div>
+
+    <div class="tree-item" onclick="this.classList.toggle('open')">
+      <span class="tree-prefix">├── </span><span class="tree-file">agents.md</span><span class="tree-comment"># Specialized AI agents for your project</span>
+      <div class="tree-desc">Custom agents tailored to your stack — a reviewer that knows your ORM patterns, a planner that understands your architecture, a tester that matches your testing style. Each agent has one job and does it well.</div>
+    </div>
+
+    <div class="tree-item" onclick="this.classList.toggle('open')">
+      <span class="tree-prefix">├── </span><span class="tree-file">teams.md</span><span class="tree-comment"># Agents that work together</span>
+      <div class="tree-desc">Groups of agents with defined workflows. Your feature-dev team: Planner breaks it down, Coder implements, Reviewer checks quality, Tester validates. With clear handoffs and rejection handling.</div>
+    </div>
+
+    <div class="tree-item" onclick="this.classList.toggle('open')">
+      <span class="tree-prefix">├── </span><span class="tree-file">evolve.md</span><span class="tree-comment"># Your setup improves while you work</span>
+      <div class="tree-desc">Hooks track how you work in the background. When patterns emerge — new frameworks, repeated tasks, shifting focus — Weave proposes targeted improvements. Nothing changes without your approval.</div>
+    </div>
+
+    <div class="tree-item" onclick="this.classList.toggle('open')">
+      <span class="tree-prefix">├── </span><span class="tree-file">sync.md</span><span class="tree-comment"># One workflow, every platform</span>
+      <div class="tree-desc">Your workflow works across Claude Code, OpenClaw, Cursor, and Codex. Set it up once, sync everywhere. Each platform gets native-format files — no compatibility hacks.</div>
+    </div>
+
+    <div class="tree-item" onclick="this.classList.toggle('open')">
+      <span class="tree-prefix">└── </span><span class="tree-file">uninstall.md</span><span class="tree-comment"># Clean removal, zero residue</span>
+      <div class="tree-desc">Don't like it? npx weave-ai uninstall removes everything — every file, every config, every hook. Leaves your project exactly as it was. No lock-in, no leftovers.</div>
     </div>
   </section>
 
-  <!-- Demo -->
+  <div class="divider">---</div>
+
+  <!-- 5. Platforms -->
+  <section id="platforms" class="section platforms fade-in">
+    <p class="section-title">supported platforms</p>
+
+    <div class="platform">
+      <span class="platform-name">[Claude Code]</span>
+      <span class="platform-status ready">&#10003; skills, subagents, hooks, CLAUDE.md</span>
+    </div>
+    <div class="platform">
+      <span class="platform-name">[OpenClaw]</span>
+      <span class="platform-status ready">&#10003; skills, SOUL.md, STYLE.md, hooks</span>
+    </div>
+    <div class="platform">
+      <span class="platform-name">[Cursor]</span>
+      <span class="platform-status ready">&#10003; commands, .mdc rules, hooks</span>
+    </div>
+    <div class="platform">
+      <span class="platform-name">[Codex]</span>
+      <span class="platform-status ready">&#10003; skills, AGENTS.md, hooks</span>
+    </div>
+  </section>
+
+  <div class="divider">---</div>
+
+  <!-- 6. Demo -->
   <section id="demo" class="section fade-in">
-    <h2 class="section-heading">See it in action</h2>
+    <p class="section-title">demo</p>
     <div class="demo-window">
       <div class="demo-titlebar">
         <span class="demo-dot red"></span>
@@ -132,77 +184,33 @@
     </div>
   </section>
 
-  <!-- Platforms -->
-  <section id="platforms" class="section fade-in">
-    <h2 class="section-heading">Supported platforms</h2>
-    <div class="platform-grid">
-      <div class="platform-card">
-        <h3>Claude Code</h3>
-        <ul>
-          <li>7 skills</li>
-          <li>4 subagents</li>
-          <li>2 hooks</li>
-          <li>CLAUDE.md integration</li>
-        </ul>
-        <span class="platform-badge">✓ full support</span>
-      </div>
-      <div class="platform-card">
-        <h3>OpenClaw</h3>
-        <ul>
-          <li>7 sub-skills</li>
-          <li>SKILL.md + SOUL.md + STYLE.md</li>
-          <li>2 hooks</li>
-          <li>AGENTS.md integration</li>
-        </ul>
-        <span class="platform-badge">✓ full support</span>
-      </div>
-      <div class="platform-card">
-        <h3>Cursor</h3>
-        <ul>
-          <li>7 commands</li>
-          <li>weave.mdc rules</li>
-          <li>hooks.json + 2 hooks</li>
-          <li>Native .cursor/ structure</li>
-        </ul>
-        <span class="platform-badge">✓ full support</span>
-      </div>
-      <div class="platform-card">
-        <h3>Codex</h3>
-        <ul>
-          <li>7 skills</li>
-          <li>AGENTS.md</li>
-          <li>hooks.json + 2 hooks</li>
-          <li>Native .codex/ structure</li>
-        </ul>
-        <span class="platform-badge">✓ full support</span>
-      </div>
-    </div>
-  </section>
+  <div class="divider">---</div>
 
-  <!-- CTA -->
-  <section class="section cta fade-in">
-    <h2 class="section-heading">Get started</h2>
-    <button class="cmd cmd-large" data-copy="npx weave-ai">
+  <!-- 7. Get Started -->
+  <section class="section get-started fade-in">
+    <p class="section-title">get started</p>
+    <button class="cmd" data-copy="npx weave-ai">
       <span class="prompt">$</span>
       <span>npx weave-ai</span>
       <span class="cursor"></span>
       <span class="copied-tooltip">copied!</span>
     </button>
-    <p class="cta-hint">Install, pick your platforms, then run <code>/weave:onboarding</code>.</p>
-    <div class="cta-links">
-      <a href="docs.html" class="cta-link">read the docs</a>
-      <a href="https://github.com/ninodinoo/weave" target="_blank" rel="noopener" class="cta-link">view on github ↗</a>
-    </div>
+    <p style="margin-top: 16px; color: var(--dimmed); font-size: 15px;">Run it, pick your platforms, then run /weave:onboarding.</p>
+    <p class="comment" style="margin-top: 24px;">learn more:</p>
+    <a href="docs.html" class="github-link">documentation</a>
+    <span style="color: var(--dimmed); margin: 0 8px;">·</span>
+    <a href="https://github.com/ninodinoo/weave" class="github-link" target="_blank" rel="noopener">github</a>
   </section>
 
   <!-- Footer -->
   <footer class="footer">
-    <p>built by <a href="https://github.com/ninodinoo" target="_blank" rel="noopener">nino</a></p>
+    <div class="divider">---</div>
+    <p style="margin-top: 20px;">built by nino</p>
     <div class="footer-links">
       <a href="https://github.com/ninodinoo/weave" target="_blank" rel="noopener">github</a>
       <a href="https://www.npmjs.com/package/weave-ai" target="_blank" rel="noopener">npm</a>
       <a href="docs.html">docs</a>
-      <a href="#">MIT license</a>
+      <a href="#">license: MIT</a>
     </div>
   </footer>
 
